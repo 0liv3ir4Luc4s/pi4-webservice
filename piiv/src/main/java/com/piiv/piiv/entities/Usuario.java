@@ -16,13 +16,21 @@ public class Usuario {
 	@Column(name = "nome", length = 50)
 	private String nome;
 	private Boolean ativo;
+	private Boolean isAdmin;
+	public Boolean getIsAdmin() {
+		return isAdmin;
+	}
+
+	public void setIsAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataNascimento;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataCadastro;
 	
     // Constructor
-    public Usuario(String login, String senha, String nome, Boolean ativo, Date dataNascimento, Date dataCadastro) {
+    public Usuario(String login, String senha, String nome, Boolean ativo, Date dataNascimento, Date dataCadastro, Boolean isAdmin) {
         this.login = login;
         this.senha = senha;
         this.nome = nome;
